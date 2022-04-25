@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/ui/CustomizeUI.gd" type="Script" id=2]
+
+[node name="Customize" type="VBoxContainer"]
+margin_right = 297.0
+margin_bottom = 338.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+alignment = 1
+script = ExtResource( 2 )
+
+[node name="PartContainer" parent="." instance_placeholder="res://src/ui/PartContainer.tscn"]
+margin_top = 145.0
+margin_right = 297.0
+margin_bottom = 169.0
+
+[node name="Randomize" type="Button" parent="."]
+margin_top = 173.0
+margin_right = 83.0
+margin_bottom = 193.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Randomize"
+
+[connection signal="pressed" from="Randomize" to="." method="_on_Randomize_pressed"]

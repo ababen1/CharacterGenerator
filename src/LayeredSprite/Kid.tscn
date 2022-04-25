@@ -1,0 +1,220 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://assets/Character_Generator/Bodies/16x16/Body_05.png" type="Texture" id=1]
+[ext_resource path="res://assets/Character_Generator/Outfits/16x16/Outfit_22_01.png" type="Texture" id=2]
+[ext_resource path="res://src/LayeredSprite/LayeredSprite.gd" type="Script" id=3]
+[ext_resource path="res://src/AnimationGenerator.gd" type="Script" id=4]
+[ext_resource path="res://src/LayeredSprite/SpriteLayer.gd" type="Script" id=5]
+[ext_resource path="res://assets/Character_Generator/Hairstyles/16x16/Hairstyle_01_02.png" type="Texture" id=6]
+[ext_resource path="res://assets/Character_Generator/Eyes/16x16/Eyes_05.png" type="Texture" id=7]
+[ext_resource path="res://assets/Character_Generator/Accessories/16x16/Accessory_03_Backpack_06.png" type="Texture" id=8]
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:tile_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 16, 32 ) ]
+}
+
+[sub_resource type="Animation" id=1]
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 18, 1 ), Vector2( 19, 1 ), Vector2( 20, 1 ), Vector2( 21, 1 ), Vector2( 22, 1 ), Vector2( 23, 1 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 12, 1 ), Vector2( 13, 1 ), Vector2( 14, 1 ), Vector2( 15, 1 ), Vector2( 16, 1 ), Vector2( 17, 1 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0, 1 ), Vector2( 1, 1 ), Vector2( 2, 1 ), Vector2( 3, 1 ), Vector2( 4, 1 ), Vector2( 5, 1 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 6, 1 ), Vector2( 7, 1 ), Vector2( 8, 1 ), Vector2( 9, 1 ), Vector2( 10, 1 ), Vector2( 11, 1 ) ]
+}
+
+[sub_resource type="Animation" id=16]
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 18, 2 ), Vector2( 19, 2 ), Vector2( 20, 2 ), Vector2( 21, 2 ), Vector2( 22, 2 ), Vector2( 23, 2 ) ]
+}
+
+[sub_resource type="Animation" id=15]
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 12, 2 ), Vector2( 13, 2 ), Vector2( 14, 2 ), Vector2( 15, 2 ), Vector2( 16, 2 ), Vector2( 17, 2 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0, 2 ), Vector2( 1, 2 ), Vector2( 2, 2 ), Vector2( 3, 2 ), Vector2( 4, 2 ), Vector2( 5, 2 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 6, 2 ), Vector2( 7, 2 ), Vector2( 8, 2 ), Vector2( 9, 2 ), Vector2( 10, 2 ), Vector2( 11, 2 ) ]
+}
+
+[node name="Kid" type="Node2D"]
+script = ExtResource( 3 )
+tile_size = Vector2( 16, 32 )
+frame_coords = Vector2( 18, 1 )
+
+[node name="Body" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 288, 32, 16, 32 )
+script = ExtResource( 5 )
+layer_name = "skin"
+folder = "res://assets/Character_Generator/Bodies_kids/16x16"
+
+[node name="Outfit" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 288, 32, 16, 32 )
+script = ExtResource( 5 )
+layer_name = "outfit"
+folder = "res://assets/Character_Generator/Outfits_kids/16x16"
+
+[node name="Hair" type="Sprite" parent="."]
+texture = ExtResource( 6 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 288, 32, 16, 32 )
+script = ExtResource( 5 )
+layer_name = "hairstyle"
+folder = "res://assets/Character_Generator/Hairstyles_kids/16x16"
+can_be_empty = true
+
+[node name="Eyes" type="Sprite" parent="."]
+texture = ExtResource( 7 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 288, 32, 16, 32 )
+script = ExtResource( 5 )
+layer_name = "eyes"
+folder = "res://assets/Character_Generator/Eyes_kids/16x16"
+can_be_empty = true
+
+[node name="Accessory" type="Sprite" parent="."]
+texture = ExtResource( 8 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 288, 32, 16, 32 )
+script = ExtResource( 5 )
+layer_name = "accessory"
+folder = "res://assets/Character_Generator/Accessories/16x16"
+can_be_empty = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "idle_down"
+anims/RESET = SubResource( 2 )
+anims/idle_down = SubResource( 1 )
+anims/idle_left = SubResource( 12 )
+anims/idle_right = SubResource( 10 )
+anims/idle_up = SubResource( 11 )
+anims/walk_down = SubResource( 16 )
+anims/walk_left = SubResource( 15 )
+anims/walk_right = SubResource( 13 )
+anims/walk_up = SubResource( 14 )
+script = ExtResource( 4 )
+output = "res://assets/Animations"
