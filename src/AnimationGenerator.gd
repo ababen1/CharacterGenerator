@@ -9,34 +9,35 @@ const SCHEME = [
 	"to",
 	"loop"]
 
-func _ready() -> void:pass
+func _ready() -> void:
+	pass
 
-func _generate_animation_files(save_to_disk: = true, save_to_scene: = false):
+func _generate_animation_files(save_to_disk: = true):
 	for data in AnimationsData.ANIMATIONS:
-		var new_anim = Animation.new()
 		var anim_name = data["anim_name"] + "_" + data["direction"]
-		new_anim.loop = data["loop"]
-		new_anim.length = data["from"].distance_to(data["to"]) / 10
-		if data["from"].distance_to(data["to"]) == 0:
-			new_anim.length = 0.1
-		_create_track(new_anim, data)
+		var anim_to_modify = get_animation(anim_name)
+		if not anim_to_modify:
+			anim_to_modify = Animation.new()
+		anim_to_modify.loop = data["loop"]
+		anim_to_modify.length = data["from"].distance_to(data["to"]) / 10
+		if data["from"].x - data["to"].x == 0:
+			anim_to_modify.length = 0.1
+		_create_track(anim_to_modify, data)
 		if save_to_disk:
 # warning-ignore:return_value_discarded
-			ResourceSaver.save(output.plus_file(anim_name) + ".res", new_anim)
-		if save_to_scene:
-			if has_animation(anim_name):
-				remove_animation(anim_name)
-			add_animation(anim_name, new_anim)
-	if save_to_scene:
-		save_changes_made_to_scene(get_tree().current_scene)
-	
+			ResourceSaver.save(output.plus_file(anim_name) + ".res", anim_to_modify)
+	save_changes_made_to_scene(get_tree().current_scene)
 
 static func save_changes_made_to_scene(scene):
 	var packed_scene = PackedScene.new()
 	packed_scene.pack(scene)	
+# warning-ignore:return_value_discarded
+	ResourceSaver.save(scene.filename, packed_scene)
 		
 func _create_track(anim: Animation, data: Dictionary):
-	var track_idx: int = anim.add_track(Animation.TYPE_VALUE)
+	var track_idx: int = anim.find_track(".:frame_coords")
+	if track_idx == -1:
+		track_idx = anim.add_track(Animation.TYPE_VALUE)
 	anim.track_set_path(track_idx, ".:frame_coords")
 	anim.value_track_set_update_mode(track_idx, Animation.UPDATE_DISCRETE)
 	_inset_keys(anim, track_idx, data)

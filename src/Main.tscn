@@ -9,6 +9,8 @@
 script = ExtResource( 4 )
 
 [node name="Adult" parent="." instance=ExtResource( 3 )]
+tile_size = Vector2( 0, 0 )
+frame_coords = Vector2( 0, 0 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
