@@ -25,14 +25,17 @@ func _on_CharDirection_set_char_direction(direction) -> void:
 	character.set_current_direction(direction)
 
 func _on_Save_pressed() -> void:
-	file_dialog.current_dir = OS.get_system_dir(OS.SYSTEM_DIR_PICTURES)
-	file_dialog.popup()
-	character.play_animation("static")
-	var path: String = yield(file_dialog, "file_selected")
-	var img_data: = viewport.get_texture().get_data()
-	img_data.flip_y()
-# warning-ignore:return_value_discarded
-	img_data.save_png(path)
+	if OS.get_name() == "HTML5":
+		$CanvasLayer/Control/HtmlError.popup()
+	else:
+		file_dialog.current_dir = OS.get_system_dir(OS.SYSTEM_DIR_PICTURES)
+		file_dialog.popup()
+		character.play_animation("static")
+		var path: String = yield(file_dialog, "file_selected")
+		var img_data: = viewport.get_texture().get_data()
+		img_data.flip_y()
+	# warning-ignore:return_value_discarded
+		img_data.save_png(path)
 
 func _on_FileDialog_popup_hide() -> void:
 	character.play_animation("idle")

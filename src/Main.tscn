@@ -1,15 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/ui/CustomizeUI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/ui/Direction.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/LayeredSprite/Adult.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Main.gd" type="Script" id=4]
+[ext_resource path="res://src/ui/HtmlError.gd" type="Script" id=5]
 
 [node name="CharacterGenerator" type="Node2D"]
 script = ExtResource( 4 )
 
 [node name="Adult" parent="." instance=ExtResource( 3 )]
-frame_coords = Vector2( 21, 1 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -91,6 +91,18 @@ filters = PoolStringArray( "*.png" )
 current_dir = "/Users/Ben/Documents/CharacterGenerator"
 current_file = "character"
 current_path = "/Users/Ben/Documents/CharacterGenerator/character"
+
+[node name="HtmlError" type="AcceptDialog" parent="CanvasLayer/Control"]
+visible = true
+margin_left = 140.0
+margin_top = 96.0
+margin_right = 520.0
+margin_bottom = 294.0
+window_title = "Whoops"
+resizable = true
+dialog_text = "Can't save as PNG on the browser version :(
+"
+script = ExtResource( 5 )
 
 [connection signal="pressed" from="CanvasLayer/Control/VBox/HBox2/Save" to="." method="_on_Save_pressed"]
 [connection signal="set_char_direction" from="CanvasLayer/Control/CharDirection" to="." method="_on_CharDirection_set_char_direction"]
