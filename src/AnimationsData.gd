@@ -9,28 +9,28 @@ const ANIMATIONS = [
 		"direction": "right",
 		"from": Vector2(0,0),
 		"to": Vector2(0,0),
-		"loop": true
+		"loop": false
 	},
 	{
 		"anim_name": "static",
 		"direction": "up",
 		"from": Vector2(1,0),
 		"to": Vector2(0,0),
-		"loop": true
+		"loop": false
 	},
 	{
 		"anim_name": "static",
 		"direction": "left",
 		"from": Vector2(2,0),
 		"to": Vector2(0,0),
-		"loop": true
+		"loop": false
 	},
 	{
 		"anim_name": "static",
 		"direction": "down",
 		"from": Vector2(3,0),
 		"to": Vector2(0,0),
-		"loop": true
+		"loop": false
 	},
 	{
 		"anim_name": "idle",

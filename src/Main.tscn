@@ -9,8 +9,7 @@
 script = ExtResource( 4 )
 
 [node name="Adult" parent="." instance=ExtResource( 3 )]
-tile_size = Vector2( 0, 0 )
-frame_coords = Vector2( 0, 0 )
+frame_coords = Vector2( 21, 1 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -46,7 +45,12 @@ margin_top = 160.0
 margin_right = 132.0
 margin_bottom = 160.0
 stretch = true
-stretch_shrink = 4
+
+[node name="Viewport" type="Viewport" parent="CanvasLayer/Control/VBox/HBox/CC/ViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+usage = 0
+render_target_update_mode = 3
 
 [node name="VSeparator" type="VSeparator" parent="CanvasLayer/Control/VBox/HBox"]
 modulate = Color( 1, 1, 1, 0.180392 )
@@ -67,9 +71,9 @@ margin_right = 624.0
 margin_bottom = 344.0
 
 [node name="Save" type="Button" parent="CanvasLayer/Control/VBox/HBox2"]
-margin_right = 41.0
+margin_right = 73.0
 margin_bottom = 20.0
-text = "Save"
+text = "Save PNG"
 
 [node name="CharDirection" parent="CanvasLayer/Control" instance=ExtResource( 2 )]
 margin_left = 25.0
@@ -78,4 +82,16 @@ margin_right = 95.0
 margin_bottom = 88.0
 size_flags_horizontal = 0
 
+[node name="FileDialog" type="FileDialog" parent="CanvasLayer/Control"]
+margin_right = 520.0
+margin_bottom = 336.0
+resizable = true
+access = 2
+filters = PoolStringArray( "*.png" )
+current_dir = "/Users/Ben/Documents/CharacterGenerator"
+current_file = "character"
+current_path = "/Users/Ben/Documents/CharacterGenerator/character"
+
+[connection signal="pressed" from="CanvasLayer/Control/VBox/HBox2/Save" to="." method="_on_Save_pressed"]
 [connection signal="set_char_direction" from="CanvasLayer/Control/CharDirection" to="." method="_on_CharDirection_set_char_direction"]
+[connection signal="popup_hide" from="CanvasLayer/Control/FileDialog" to="." method="_on_FileDialog_popup_hide"]
