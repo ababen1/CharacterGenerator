@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/Character_Generator/Outfits/16x16/Outfit_01_01.png" type="Texture" id=2]
 [ext_resource path="res://src/LayeredSprite/SpriteLayer.gd" type="Script" id=3]
 [ext_resource path="res://src/LayeredSprite/LayeredSprite.gd" type="Script" id=4]
-[ext_resource path="res://src/AnimationGenerator.gd" type="Script" id=5]
+[ext_resource path="res://src/LayeredSprite/AnimationGenerator.gd" type="Script" id=5]
 [ext_resource path="res://assets/Animations/idle_down.res" type="Animation" id=6]
 [ext_resource path="res://assets/Animations/idle_right.res" type="Animation" id=7]
 [ext_resource path="res://assets/Animations/idle_up.res" type="Animation" id=8]
@@ -71,13 +71,13 @@ tracks/2/keys = {
 [node name="Adult" type="Node2D"]
 script = ExtResource( 4 )
 tile_size = Vector2( 16, 32 )
-frame_coords = Vector2( 22, 1 )
+frame_coords = Vector2( 20, 1 )
 
 [node name="Body" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
-region_rect = Rect2( 352, 32, 16, 32 )
+region_rect = Rect2( 320, 32, 16, 32 )
 script = ExtResource( 3 )
 layer_name = "skin"
 folder = "res://assets/Character_Generator/Bodies/16x16"
@@ -86,7 +86,7 @@ folder = "res://assets/Character_Generator/Bodies/16x16"
 texture = ExtResource( 2 )
 centered = false
 region_enabled = true
-region_rect = Rect2( 352, 32, 16, 32 )
+region_rect = Rect2( 320, 32, 16, 32 )
 script = ExtResource( 3 )
 layer_name = "outfit"
 folder = "res://assets/Character_Generator/Outfits/16x16"
@@ -94,7 +94,7 @@ folder = "res://assets/Character_Generator/Outfits/16x16"
 [node name="Hair" type="Sprite" parent="."]
 centered = false
 region_enabled = true
-region_rect = Rect2( 352, 32, 16, 32 )
+region_rect = Rect2( 320, 32, 16, 32 )
 script = ExtResource( 3 )
 layer_name = "hairstyle"
 folder = "res://assets/Character_Generator/Hairstyles/16x16"
@@ -103,7 +103,7 @@ can_be_empty = true
 [node name="Eyes" type="Sprite" parent="."]
 centered = false
 region_enabled = true
-region_rect = Rect2( 352, 32, 16, 32 )
+region_rect = Rect2( 320, 32, 16, 32 )
 script = ExtResource( 3 )
 layer_name = "eyes"
 folder = "res://assets/Character_Generator/Eyes/16x16"
@@ -112,7 +112,7 @@ can_be_empty = true
 [node name="Accessory" type="Sprite" parent="."]
 centered = false
 region_enabled = true
-region_rect = Rect2( 352, 32, 16, 32 )
+region_rect = Rect2( 320, 32, 16, 32 )
 script = ExtResource( 3 )
 layer_name = "accessory"
 folder = "res://assets/Character_Generator/Accessories/16x16"

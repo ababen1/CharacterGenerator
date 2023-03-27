@@ -31,7 +31,8 @@ static func get_textures_in_folder(path: String):
 		dir.list_dir_begin()
 		var file_name: String = dir.get_next()
 		while file_name != "":
-			file_name = file_name.replace('.import', '')
+			if not OS.is_debug_build():
+				file_name = file_name.replace('.import', '')
 			if ResourceLoader.exists(path.plus_file(file_name)):
 				var current_tex = load(path.plus_file(file_name))
 				if current_tex is Texture:
